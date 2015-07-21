@@ -18,6 +18,12 @@ function appConfigurator($locationProvider, $stateProvider, $urlRouterProvider) 
     })
     .state('photo', {
         url: '/photo/{photoID}',
-        templateUrl: 'views/photo.html'
+        templateUrl: 'views/photo.html',
+        controller: 'PhotoController as photoCtrl',
+        resolve: {
+            photoData: ['Feed', '$stateParams', function(Feed, $stateParams) {
+                return Feed.getPhoto($stateParams.photoID);
+            }]
+        }
     });
 }

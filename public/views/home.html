@@ -1,5 +1,5 @@
 <div ng-repeat="post in homeCtrl.feed">
-    <a><img src="{{post.media.m}}"></a>
+    <a ui-sref="photo({ photoID: {{$index}} })"><img src="{{post.media.m}}"></a>
     <div>
         <h2>{{post.title}}</h2>
         <a href="{{homeCtrl.getAuthorLink(post.author_id)}}">{{post.author}}</a>

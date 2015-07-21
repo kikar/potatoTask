@@ -7,6 +7,7 @@ angular.module('potatoServices', [])
 function feedFactory($http) {
     var flickrUrl = 'https://api.flickr.com/services/feeds/photos_public.gne';
 
+    var feed = [];
     var feedPromise = $http({
         method: 'JSONP',
         url: flickrUrl,
@@ -18,9 +19,17 @@ function feedFactory($http) {
         }
     });
 
+    feedPromise
+    .success(function(data) {
+        feed = data.items;
+    });
+
     return {
         getFeed: function() {
             return feedPromise;
+        },
+        getPhoto: function(photoID) {
+            return feed[photoID];
         }
     };
 }
