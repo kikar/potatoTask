@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('testApp', ['ui.router'])
+angular.module('potatoApp', ['ui.router', 'potatoControllers', 'potatoServices'])
 
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', appConfigurator]);
 
@@ -13,6 +13,11 @@ function appConfigurator($locationProvider, $stateProvider, $urlRouterProvider) 
     $stateProvider
     .state('home', {
         url: '/',
-        templateUrl: 'views/home.html'
+        templateUrl: 'views/home.html',
+        controller: 'HomeController as homeCtrl'
+    })
+    .state('photo', {
+        url: '/photo/{photoID}',
+        templateUrl: 'views/photo.html'
     });
 }
