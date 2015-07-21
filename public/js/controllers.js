@@ -11,4 +11,9 @@ function homeCtrl(Feed) {
     .success(function(data) {
         ctrl.feed = data.items;
     });
+
+    ctrl.getAuthorLink = function(authorID) {
+        var baseURL = 'https://www.flickr.com/photos/';
+        return baseURL + authorID;
+    };
 }
