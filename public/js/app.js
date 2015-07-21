@@ -14,7 +14,12 @@ function appConfigurator($locationProvider, $stateProvider, $urlRouterProvider) 
     .state('home', {
         url: '/',
         templateUrl: 'views/home.html',
-        controller: 'HomeController as homeCtrl'
+        controller: 'HomeController as homeCtrl',
+        resolve: {
+            feedData: ['Feed', function(Feed) {
+                return Feed.getFeed();
+            }]
+        }
     })
     .state('photo', {
         url: '/photo/{photoID}',

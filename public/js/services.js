@@ -26,10 +26,16 @@ function feedFactory($http) {
 
     return {
         getFeed: function() {
-            return feedPromise;
+            return feedPromise
+            .then(function(response) {
+                return response.data.items;
+            });
         },
         getPhoto: function(photoID) {
-            return feed[photoID];
+            return feedPromise
+            .then(function(response) {
+                return response.data.items[photoID];
+            });
         }
     };
 }

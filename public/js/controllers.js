@@ -2,16 +2,12 @@
 
 angular.module('potatoControllers', [])
 
-.controller('HomeController', ['Feed', homeCtrl])
+.controller('HomeController', ['feedData', homeCtrl])
 .controller('PhotoController', ['photoData', photoCtrl]);
 
-function homeCtrl(Feed) {
+function homeCtrl(feedData) {
     var ctrl = this;
-
-    Feed.getFeed()
-    .success(function(data) {
-        ctrl.feed = data.items;
-    });
+    ctrl.feed = feedData;
 
     ctrl.getAuthorLink = function(authorID) {
         var baseURL = 'https://www.flickr.com/photos/';
