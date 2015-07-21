@@ -1,0 +1,5 @@
+#Ignore OSX files
+*.DS_Store
+
+#Ignore Modulues
+*node_modules
