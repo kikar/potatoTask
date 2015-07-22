@@ -33,7 +33,8 @@ h3 {
     margin: 20px 0;
 }
 
-h3 a:hover {
+h3 a:hover,
+h2 a:hover {
     color: #003333;
 }
 
@@ -61,11 +62,12 @@ img {
 }
 
 .home-text > a,
-.home-text > a:visited {
+.photo-titles > a {
     color: #003333;
 }
 
-.home-text > a:hover {
+.home-text > a:hover,
+.photo-titles > a:hover {
     color: teal;
 }
 
@@ -113,7 +115,9 @@ section {
 
 section a {
     padding-left: 10px;
+    padding-bottom: 5px;
     color: teal;
+    display: inline-block;
 }
 
 .google-btn {
