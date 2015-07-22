@@ -9,6 +9,10 @@ a:visited {
     color: inherit;
 }
 
+p {
+    padding-bottom: 20px;
+}
+
 h1 {
     font-size: 41px;
     margin: 40px 0 40px 30px;
@@ -20,7 +24,7 @@ h2, h3 {
 
 h2 {
     font-size: 36px;
-    margin: 20px 0 20px 40px;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -28,8 +32,18 @@ h3 {
     margin: 20px 0;
 }
 
+h3 a:link,
+h3 a:visited {
+    color: teal;
+}
+
+h3 a:hover {
+    color: #003333;
+}
+
 h4 {
     display: inline-block;
+    padding: 0 10px;
 }
 
 .home-image {
@@ -38,7 +52,7 @@ h4 {
     vertical-align: middle;
 }
 
-.home-image img {
+img {
     object-fit: none;
     object-position: center;
     height: 150px;
@@ -48,6 +62,15 @@ h4 {
 .home-text {
     float: left;
     padding: 2% 30px;
+}
+
+.home-text > a,
+.home-text > a:visited {
+    color: #003333;
+}
+
+.home-text > a:hover {
+    color: teal;
 }
 
 .container {
@@ -69,4 +92,30 @@ button {
     cursor: pointer;
     padding: 6px 12px;
     color: white;
+    float: right;
+    margin-right: 40px;
+}
+
+.photo-titles {
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.photo-content {
+    margin: 40px 40px;
+    position: relative;
+}
+
+.photo-content img {
+    position: absolute;
+}
+
+section {
+    position: absolute;
+    left: 190px;
+}
+
+section a {
+    padding-left: 10px;
+    color: teal;
 }
