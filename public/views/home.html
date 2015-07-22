@@ -2,8 +2,8 @@
     <a ui-sref="photo({ photoID: {{$index}} })" class="home-image"><img src="{{post.media.m}}"></a>
     <div class="home-text">
         <h3><a ui-sref="photo({ photoID: {{$index}} })">{{post.title}}</a></h3>
-        <a href="{{homeCtrl.getAuthorLink(post.author_id)}}">{{post.author}}</a>
-        <h4>Published: {{post.published | date }}</h4>
+        <a href="{{homeCtrl.getAuthorLink(post.author_id)}}">{{post.author | author}}</a>
+        <h4>Published: {{post.published | date:'dd MMM yyyy AT HH:mm' }}</h4>
         <a href="{{post.link}}">View on Flickr</a>
     </div>
 </div>
