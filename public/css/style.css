@@ -25,7 +25,39 @@ h2 {
 
 h3 {
     font-size: 26px;
-    margin: 10px;
+    margin: 20px 0;
+}
+
+h4 {
+    display: inline-block;
+}
+
+.home-image {
+    float: left;
+    margin-left: 3px;
+    vertical-align: middle;
+}
+
+.home-image img {
+    object-fit: none;
+    object-position: center;
+    height: 150px;
+    width: 150px;
+}
+
+.home-text {
+    float: left;
+    padding: 2% 30px;
+}
+
+.container {
+    clear: both;
+    position: relative;
+    margin-left: 40px;
+    margin-right: 40px;
+    border: 1px solid grey;
+    padding: 10px;
+    height: 150px;
 }
 
 button {
