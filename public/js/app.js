@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('potatoApp', ['ui.router', 'potatoControllers', 'potatoServices'])
+angular.module('potatoApp', ['ui.router', 'angulike', 'potatoControllers', 'potatoServices'])
 
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', appConfigurator]);
 
