@@ -8,27 +8,27 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'public/script.min.js': ['public/script.min.js']
+                    'public/prod/script.min.js': ['public/prod/script.min.js']
                 }
             }
         },
         concat: {
             js: {
                 src: ['public/lib/angular.js', 'public/lib/angular-ui-router.js', 'public/js/*.js'],
-                dest: 'public/script.min.js',
+                dest: 'public/prod/script.min.js',
             },
             css: {
                 src: ['public/css/*.css'],
-                dest: 'public/style.min.css'
+                dest: 'public/prod/style.min.css'
             }
         },
         cssmin: {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'public',
+                    cwd: 'public/prod/',
                     src: ['style.min.css'],
-                    dest: 'public',
+                    dest: 'public/prod/',
                     ext: '.min.css'
                 }]
             }

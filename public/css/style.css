@@ -1,5 +1,9 @@
+body {
+    min-width: 400px;
+}
 body, button {
     font-family: 'Open Sans';
+    line-height: 1.2em;
 }
 a {
     text-decoration: none;
@@ -16,7 +20,7 @@ p {
 
 h1 {
     font-size: 41px;
-    margin: 40px 0 40px 30px;
+    margin: 25px 5% 30px 5%;
 }
 
 h2, h3 {
@@ -26,11 +30,15 @@ h2, h3 {
 h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    line-height: 1.2em;
 }
 
 h3 {
     font-size: 26px;
     margin: 20px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 h3 a:hover,
@@ -46,25 +54,25 @@ h4 {
 .home-image {
     float: left;
     margin-left: 3px;
+    margin-right: 30px;
     vertical-align: middle;
 }
 
 img {
-    object-fit: none;
+    object-fit: cover;
+    overflow: hidden;
     object-position: center;
-    height: 150px;
     width: 150px;
-}
-
-.home-text {
-    float: left;
-    padding: 2% 30px;
+    height: 150px;
 }
 
 .home-text > a,
 .photo-titles > a {
     color: #003333;
+    white-space: nowrap;
+    font-size: 80%;
 }
+
 
 .home-text > a:hover,
 .photo-titles > a:hover {
@@ -73,14 +81,16 @@ img {
 
 .container {
     clear: both;
-    position: relative;
-    margin-left: 40px;
-    margin-right: 40px;
-    border: 1px solid grey;
+    margin: 0 5%;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
     padding: 10px;
     height: 150px;
 }
-
+.container:last-child {
+    border: 1px solid grey;
+}
 button {
     background-color: teal;
     border-radius: 4px;
@@ -122,4 +132,34 @@ section a {
 
 .google-btn {
     padding-top: 10px;
+}
+
+.fl {
+    float: left;
+}
+
+@media screen and (max-width: 800px) {
+    .fl {
+        float: inherit;
+    }
+    h4 {
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    .home-text > a {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    h3 {
+        margin: 15px 0;
+    }
+    h4 span {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
 }
