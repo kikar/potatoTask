@@ -24,11 +24,19 @@ function homeCtrl(feedData, Feed) {
     ctrl.search = function() {
         ctrl.tempFeed = ctrl.feed.slice();
         ctrl.feed = ctrl.feed.filter(searchInTags, { searchText: ctrl.searchText });
+        ctrl.isSearching = true;
     };
     ctrl.cancelSearch = function() {
         ctrl.searchText = '';
         ctrl.feed = ctrl.tempFeed;
+        ctrl.isSearching = false;
     };
+
+    ctrl.showLoadMore = function() {
+        if (ctrl.feedCount < 20 && !ctrl.isSearching)
+            return true;
+        return false;
+    }
 }
 
 function photoCtrl(photoData) {
