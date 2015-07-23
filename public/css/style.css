@@ -144,11 +144,9 @@ form {
     margin: 40px 5%;
     position: relative;
 }
-
 .photo-content img {
     position: absolute;
 }
-
 section {
     position: absolute;
     left: 190px;
@@ -188,5 +186,15 @@ section a {
         width: 0;
         height: 0;
         overflow: hidden;
+    }
+    .photo-content img {
+        float: left;
+        position: relative;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    section {
+        position: relative;
+        left: 0px;
     }
 }
