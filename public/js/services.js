@@ -29,7 +29,8 @@ function feedFactory($http) {
             return feedPromise
             .then(function(response) {
                 feed = response.data.items;
-                feed.map(splitTags);
+                if (!Array.isArray(feed[0].tags))
+                    feed.map(splitTags);
                 return feed.slice(0, 5);
             });
         },

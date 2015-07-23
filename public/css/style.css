@@ -1,7 +1,7 @@
 body {
     min-width: 400px;
 }
-body, button {
+body, button, input {
     font-family: 'Open Sans';
     line-height: 1.2em;
 }
@@ -35,7 +35,7 @@ h2 {
 
 h3 {
     font-size: 26px;
-    margin: 20px 0;
+    padding: 20px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -91,7 +91,9 @@ img {
 .container:last-of-type {
     border: 1px solid grey;
 }
-button {
+
+button,
+input[type="submit"] {
     background-color: teal;
     border-radius: 4px;
     border: 0;
@@ -100,8 +102,37 @@ button {
     cursor: pointer;
     padding: 6px 12px;
     color: white;
+}
+
+input[type="text"] {
+    border-radius: 4px;
+    font-size: 13px;
+    padding: 3px 5px;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    height: 28px;
+}
+
+.search {
+    margin: 20px 5%;
+}
+
+form {
+    display: inline-block;
+}
+
+.photo-btn {
     float: right;
     margin-right: 40px;
+}
+
+.home-btn {
+    margin: 30px 0 5% 5%;
+    float: left;
+}
+
+.google-btn {
+    padding-top: 10px;
 }
 
 .photo-titles {
@@ -128,10 +159,6 @@ section a {
     padding-bottom: 5px;
     color: teal;
     display: inline-block;
-}
-
-.google-btn {
-    padding-top: 10px;
 }
 
 .fl {
@@ -162,9 +189,4 @@ section a {
         height: 0;
         overflow: hidden;
     }
-}
-
-.home-btn {
-    margin: 30px 0 5% 5%;
-    float: left;
 }

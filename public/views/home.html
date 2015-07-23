@@ -1,3 +1,10 @@
+<div class="search">
+    <form ng-submit="homeCtrl.search()">
+        <input type="text" ng-model="homeCtrl.searchText">
+        <input type="submit" value="Search">
+    </form>
+    <button ng-click="homeCtrl.cancelSearch()">Cancel</button>
+</div>
 <div ng-repeat="post in homeCtrl.feed" class="container">
     <a ui-sref="photo({ photoID: {{$index}} })" class="home-image"><img src="{{post.media.m}}"></a>
     <div class="home-text">

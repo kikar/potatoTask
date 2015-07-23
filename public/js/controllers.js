@@ -20,6 +20,15 @@ function homeCtrl(feedData, Feed) {
         ctrl.feedCount += 5;
         ctrl.feed = ctrl.feed.concat(newItems);
     };
+
+    ctrl.search = function() {
+        ctrl.tempFeed = ctrl.feed.slice();
+        ctrl.feed = ctrl.feed.filter(searchInTags, { searchText: ctrl.searchText });
+    };
+    ctrl.cancelSearch = function() {
+        ctrl.searchText = '';
+        ctrl.feed = ctrl.tempFeed;
+    };
 }
 
 function photoCtrl(photoData) {
@@ -31,4 +40,12 @@ function photoCtrl(photoData) {
         var baseURL = 'https://www.flickr.com/photos/';
         return baseURL + authorID;
     };
+}
+
+function searchInTags(item) {
+    for (var i = 0; i < item.tags.length; i++) {
+        if (item.tags[i] === this.searchText)
+            return true;
+    }
+    return false;
 }
