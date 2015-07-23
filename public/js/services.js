@@ -7,7 +7,6 @@ angular.module('potatoServices', [])
 function feedFactory($http) {
     var flickrUrl = 'https://api.flickr.com/services/feeds/photos_public.gne';
 
-    var feed = [];
     var feedPromise = $http({
         method: 'JSONP',
         url: flickrUrl,
@@ -19,17 +18,23 @@ function feedFactory($http) {
         }
     });
 
-    feedPromise
-    .success(function(data) {
-        feed = data.items;
-    });
+    function splitTags(item) {
+        item.tags = item.tags.split(' ');
+    }
+
+    var feed;
 
     return {
-        getFeed: function() {
+        getInitialFeed: function() {
             return feedPromise
             .then(function(response) {
-                return response.data.items;
+                feed = response.data.items;
+                feed.map(splitTags);
+                return feed.slice(0, 5);
             });
+        },
+        getMoreFeed: function(offset) {
+            return feed.slice(offset, offset+5);
         },
         getPhoto: function(photoID) {
             return feedPromise

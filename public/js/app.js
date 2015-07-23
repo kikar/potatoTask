@@ -17,7 +17,7 @@ function appConfigurator($locationProvider, $stateProvider, $urlRouterProvider) 
         controller: 'HomeController as homeCtrl',
         resolve: {
             feedData: ['Feed', function(Feed) {
-                return Feed.getFeed();
+                return Feed.getInitialFeed();
             }]
         }
     })

@@ -88,7 +88,7 @@ img {
     padding: 10px;
     height: 150px;
 }
-.container:last-child {
+.container:last-of-type {
     border: 1px solid grey;
 }
 button {
@@ -162,4 +162,9 @@ section a {
         height: 0;
         overflow: hidden;
     }
+}
+
+.home-btn {
+    margin: 30px 0 5% 5%;
+    float: left;
 }
