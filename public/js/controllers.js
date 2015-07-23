@@ -22,8 +22,11 @@ function homeCtrl(feedData, Feed) {
     };
 
     ctrl.search = function() {
+        var tempText = ctrl.searchText;
+        if (ctrl.isSearching)
+            ctrl.cancelSearch();
         ctrl.tempFeed = ctrl.feed.slice();
-        ctrl.feed = ctrl.feed.filter(searchInTags, { searchText: ctrl.searchText });
+        ctrl.feed = ctrl.feed.filter(searchInTags, { searchText: tempText });
         ctrl.isSearching = true;
     };
     ctrl.cancelSearch = function() {
@@ -36,7 +39,7 @@ function homeCtrl(feedData, Feed) {
         if (ctrl.feedCount < 20 && !ctrl.isSearching)
             return true;
         return false;
-    }
+    };
 }
 
 function photoCtrl(photoData) {
